@@ -1,0 +1,27 @@
+.mrgTp{
+    margin-top: 20px;
+}
+.mrgTp_liste{
+    margin-top: 80px;
+}
+.ajtcompagnon{
+    margin-left:30px;
+}
+.fondCardBody{
+    background-color: whitesmoke;
+}
+.mRight{
+    text-align: right;
+}
+.ctrMenu{
+    text-align: center
+}
+.bckgrnd{
+    background-size: 1920px 1080px;
+    background-image: url("img/8856.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+.mrgTpMenu{
+    margin-top: 20px;
+}
