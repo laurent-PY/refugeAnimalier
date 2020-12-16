@@ -37,7 +37,7 @@ if (isset($_POST['delCouleur'])){
         </div>
     </div>
 </div>
-<div class="container mrgTp">
+<div class="bodyMinMain mrgTp">
     <div class="card shadow bg-white rounded">
         <div class="card-header">
             <h3 class="ajtcompagnon">Liste des couleurs :</h3>

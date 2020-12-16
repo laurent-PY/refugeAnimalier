@@ -38,7 +38,7 @@ if (isset($_POST['delChat'])){
         </div>
     </div>
 </div>
-<div class="container mrgTp">
+<div class="bodyMAxMain mrgTp">
         <div class="card shadow bg-white rounded">
             <div class="card-header">
                 <h3 class="ajtcompagnon">Compagnons au refuge :</h3>

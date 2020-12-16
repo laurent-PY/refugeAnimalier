@@ -52,7 +52,7 @@ if (isset($_POST['subPet'])){ // je test si mon formulaire à été initialisé,
     <title>Document</title>
 </head>
 <body class="bckgrnd">
-<div class="container mrgTpMenu">
+<div class="bodyMAxMain mrgTpMenu">
     <div class="row">
         <div class="col-md-12">
             <p class="ctrMenu">  <!--ajout d'une classe qui me permet de centrer les divs du menu-->

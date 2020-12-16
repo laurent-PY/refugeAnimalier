@@ -25,3 +25,13 @@
 .mrgTpMenu{
     margin-top: 20px;
 }
+.bodyMAxMain{
+    margin-left: auto;
+    margin-right: auto;
+    width: 1200px;
+}
+.bodyMinMain{
+    margin-left: auto;
+    margin-right: auto;
+    width: 600px;
+}

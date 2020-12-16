@@ -36,13 +36,14 @@ if (isset($_POST['subUpdate'])){ // je test si mon formulaire à été initialis
         $messageChampVide = true; // si le bouton du formulaire a été cliké et qu'un champ défini lors du contrôle est vide je retourne true.
     }
 }
+
 if (isset($_POST['modifChat'])){
     $modifChat = $_POST['modifChat'];
-
 }
 $pdoBdd = cnx_pdo_bdd(); //initialisation de la variable de connexion $pdoBdd en utilisant la fonction introduite via "require 'conn_bdd.php';"
 $pdoStat = $pdoBdd->prepare('SELECT * FROM chat WHERE idChat = ' .  $modifChat); //preparation de la requete stockée dans $pdoStat
 $pdoStat->execute(); //execution de la requete
+print_r($pdoStat);
 $resultChat = $pdoStat->fetchAll(); // stockage du resultat dans la variable $resultChat
 
 
@@ -82,7 +83,7 @@ foreach($resultChat as $value){
 </head>
 
 <body class="bckgrnd">
-<div class="container mrgTpMenu">
+<div class="bodyMAxMain mrgTpMenu">
     <div class="row">
         <div class="col-md-12">
             <p class="ctrMenu">  <!--ajout d'une classe qui me permet de centrer les divs du menu-->
