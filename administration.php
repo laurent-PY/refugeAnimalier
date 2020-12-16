@@ -83,21 +83,16 @@ if (isset($_POST['delCouleur'])){
     $delCouleur = $_POST['delCouleur'];
     delete_couleur($delCouleur);
 }
-$race = req_Sel_Race(); // dans cette variable est stocké le resultat du SElect qui me permet d'afficher un tableau et de faire une liste des compagnons
+$race = req_Sel_Race(); // dans cette variable est stocké le resultat du SElect qui me permet d'afficher un tableau et de faire une liste des races
 if (isset($_POST['delRace'])){
     $delRace = $_POST['delRace'];
     delete_race($delRace);
 }
-
-
-$sante = req_Sel_Sante(); // dans cette variable est stocké le resultat du SElect qui me permet d'afficher un tableau et de faire une liste des compagnons
+$sante = req_Sel_Sante(); // dans cette variable est stocké le resultat du SElect qui me permet d'afficher un tableau et de faire une liste des états de santé
 if (isset($_POST['delSante'])){
-
     $delSante = $_POST['delSante'];
     delete_sante($delSante);
 }
-
-
 
 ?>
 

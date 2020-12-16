@@ -4,6 +4,7 @@ include 'functions/req_sel_race_sante_color_chat.php';
 include 'functions/req_delete_pet_race_color_sante.php';
 include 'functions/req_up_pet.php';
 $chat = req_Sel_Chat(); // dans cette variable est stocké le resultat du SElect qui me permet d'afficher un tableau et de faire une liste des compagnons
+$race = req_Sel_Race(); // dans cette variable est stocké le resultat du SElect qui me permet d'afficher un tableau et de faire une liste des compagnons
 if (isset($_POST['delChat'])){
     $delChat = $_POST['delChat'];
     delete_pet($delChat);
@@ -58,6 +59,7 @@ if (isset($_POST['delChat'])){
                     </thead>
                     <tbody>
                     <?php foreach ($chat as $chats): ?>
+                    <?php  foreach ($race as $races)?>
                         <tr>
                             <td><?= $chats['nom']?></td>
                             <td><?= $chats['b_recep'] ?></td>

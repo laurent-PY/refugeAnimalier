@@ -4,10 +4,8 @@
     <list default="true" id="982b3405-d80d-4e49-9d7c-7398c2eefe62" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/administration.php" beforeDir="false" afterPath="$PROJECT_DIR$/administration.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gestion_compagnons.php" beforeDir="false" afterPath="$PROJECT_DIR$/gestion_compagnons.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/functions/req_delete_pet_race_color_sante.php" beforeDir="false" afterPath="$PROJECT_DIR$/functions/req_delete_pet_race_color_sante.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/liste_compagnons.php" beforeDir="false" afterPath="$PROJECT_DIR$/liste_compagnons.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modification_compagnons.php" beforeDir="false" afterPath="$PROJECT_DIR$/modification_compagnons.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,7 +82,7 @@
       <workItem from="1607800093261" duration="10790000" />
       <workItem from="1607931044735" duration="23021000" />
       <workItem from="1608023431814" duration="37482000" />
-      <workItem from="1608104090948" duration="36570000" />
+      <workItem from="1608104090948" duration="38723000" />
     </task>
     <servers />
   </component>
