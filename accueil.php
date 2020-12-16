@@ -20,8 +20,8 @@
             <p class="ctrMenu">  <!--ajout d'une classe qui me permet de centrer les divs du menu-->
                 <a class="btn btn-primary" href="accueil.php" role="button">Accueil</a>
                 <a class="btn btn-primary" href="gestion_compagnons.php" role="button">Gestion des compagnons</a>
-                <a class="btn btn-primary" href="administration.php" role="button">Administration</a>
                 <a class="btn btn-primary" href="liste_compagnons.php" role="button">Liste des compagnons</a>
+                <a class="btn btn-primary" href="administration.php" role="button">Administration</a>
                 <a class="btn btn-primary" href="liste_races.php" role="button">liste des races</a>
                 <a class="btn btn-primary" href="liste_couleurs.php" role="button">liste des couleurs</a>
                 <a class="btn btn-primary" href="liste_etatSante.php" role="button">liste des état de santé</a>
@@ -34,6 +34,11 @@
         <div class="row">
             <div class="col-md-12" style="text-align: center; margin-top: 200px;">
                 <img src="img/intro.png" alt="" width="800px">
+            </div>
+            <div>
+                <p class="textAccueil">
+                    Rejoignez-nous pour partager la vie d'un compagnons à 4 pattes !
+                </p>
             </div>
         </div>
     </div>

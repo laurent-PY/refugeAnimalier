@@ -35,3 +35,10 @@
     margin-right: auto;
     width: 600px;
 }
+.textAccueil{
+    color: white;
+    position: relative;
+    margin-top: 25px;
+    left: 250px;
+    font-weight: bold;
+}
