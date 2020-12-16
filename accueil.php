@@ -20,7 +20,6 @@
             <p class="ctrMenu">  <!--ajout d'une classe qui me permet de centrer les divs du menu-->
                 <a class="btn btn-primary" href="accueil.php" role="button">Accueil</a>
                 <a class="btn btn-primary" href="gestion_compagnons.php" role="button">Gestion des compagnons</a>
-                <a class="btn btn-primary" href="liste_compagnons.php" role="button">Liste des compagnons</a>
                 <a class="btn btn-primary" href="administration.php" role="button">Administration</a>
             </p>
         </div>

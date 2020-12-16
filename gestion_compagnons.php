@@ -14,7 +14,7 @@ $chat = req_Sel_Chat(); //
 
 if (isset($_POST['subPet'])){ // je test si mon formulaire à été initialisé,
     // si oui; j'effectue un contrôle sur certain champ, c'est à dire, ceux que je n'ai pas encapsulé dans un <select>
-    if (!empty($_POST['nom']) && !empty($_POST['b_recep']) && !empty($_POST['poids_recep']) && !empty($_POST['d_in']) && !empty($_POST['d_out']) && !empty($_POST['taille'])) {
+    if (!empty($_POST['nom']) && !empty($_POST['b_recep']) && !empty($_POST['poids_recep']) && !empty($_POST['d_in']) && !empty($_POST['taille'])) {
         try {
 
             $objetPdo = cnx_pdo_bdd(); // Connexion à la base en passant par le dossier functions
@@ -35,7 +35,9 @@ if (isset($_POST['subPet'])){ // je test si mon formulaire à été initialisé,
         $messageChampVide = true; // si le bouton du formulaire a été cliké et qu'un champ défini lors du contrôle est vide je retourne true.
     }
 }
-
+if (isset($_POST['listPet'])){
+    header('location: liste_compagnons.php');
+}
 
 ?>
 <!doctype html>
@@ -58,7 +60,6 @@ if (isset($_POST['subPet'])){ // je test si mon formulaire à été initialisé,
             <p class="ctrMenu">  <!--ajout d'une classe qui me permet de centrer les divs du menu-->
                 <a class="btn btn-primary" href="accueil.php" role="button">Accueil</a>
                 <a class="btn btn-primary" href="gestion_compagnons.php" role="button">Gestion des compagnons</a>
-                <a class="btn btn-primary" href="liste_compagnons.php" role="button">Liste des compagnons</a>
                 <a class="btn btn-primary" href="administration.php" role="button">Administration</a>
             </p>
         </div>
@@ -68,7 +69,7 @@ if (isset($_POST['subPet'])){ // je test si mon formulaire à été initialisé,
 <div class="container mrgTp">
     <div class="card shadow bg-white rounded">
         <div class="card-header">
-            <h3 class="ajtcompagnon">ajout de compagnon</h3>
+            <h3 class="ajtcompagnon">Gestion des compagnons</h3>
         </div>
         <div class="card-body fondCardBody">
             <form action="#" method="post"> <!--début du formulaire qui a pour action un # qui sous-entend que je cible cette page pour le traitement-->
@@ -133,9 +134,6 @@ if (isset($_POST['subPet'])){ // je test si mon formulaire à été initialisé,
                     <div class="col-md-4"><label for="d_in">Date d'entrée au refuge : </label></div>
                     <div class="col-md-3"><input type="date"name="d_in" value="<?php if (isset($_POST['d_in'])){echo $_POST['d_in'];} ?>"></div>
                     <div class="col-md-5">Date d'admission au refuge</div>
-                    <div class="col-md-4"><label for="d_out">Date de sortie du refuge : </label></div>
-                    <div class="col-md-3"><input type="date"name="d_out" value="<?php if (isset($_POST['d_out'])){echo $_POST['d_out'];} ?>"></div>
-                    <div class="col-md-5">Date de sortie du refuge</div>
                     <div class="col-md-4"><label for="taille">Taille du compagnon : </label></div>
                     <div class="col-md-3"><input type="text" class="w-100" name="taille" value="<?php if (isset($_POST['taille'])){echo $_POST['taille'];} ?>"></div>
                     <div class="col-md-5">La taille d'un compagnon se mesure au garot</div>
@@ -160,14 +158,19 @@ if (isset($_POST['subPet'])){ // je test si mon formulaire à été initialisé,
                             <div class="input-group-prepend">
                                 <select class="custom-select" name="idSante" value="<?php if (isset($_POST['etatSante'])){echo $_POST['etatSante'];} ?>">
                                     <?php foreach($sante as $santes){ ?>
-                                        <option value="<?= $santes['idSante']; ?>"><?= $santes['etatSante']; ?></option>  <!--dans le value de l'option je remplace le contenu en dur par les éléments de la base-->
-                                    <?php } ?>                                                                             <!--la première balise php contient l'id de santé, c'est celui là que je passe en requete-->
+                                    <option value="<?= $santes['idSante']; ?>"><?= $santes['etatSante']; ?></option>  <!--dans le value de l'option je remplace le contenu en dur par les éléments de la base-->
+                                    <?php } ?><!--la première balise php contient l'id de santé, c'est celui là que je passe en requete-->
                                 </select>
                             </div>
                         </div>
                     </div>
                     <div class="col-md-5">Son état de santé visuel lors de l'admission</div>
-                    <div class="col-md-4"><label for="sub"><input type="submit" name="subPet" value="Enregistrer"></label></div>
+                    <div class="col-md-1"><label for="sub"><input type="submit" class="btn btn-success" name="subPet" value="Sauver"></label></div>
+                    <form action="" method="POST">
+                        <div class="col-md-2"><label for="sub"><input type="submit" class="btn btn-success" name="listPet" value="Liste des compagnons"></label>
+                        </div>
+                        <div class="col-md-1"></div>
+                    </form>
                     <div class="col-md-8">
                         <?php if ($messageAddSuccess) {
                             ?> <div class="alert alert-success alert-dismissible fade show" role="alert" id="hideDivAjoutOk">
@@ -176,7 +179,6 @@ if (isset($_POST['subPet'])){ // je test si mon formulaire à été initialisé,
                                     <span aria-hidden="true">&times;</span>
                                 </button
                             </div>
-
                             <?php
                         }
                         ?>

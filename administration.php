@@ -119,7 +119,6 @@ if (isset($_POST['delRace'])){
             <p class="ctrMenu">  <!--ajout d'une classe qui me permet de centrer les divs du menu-->
                 <a class="btn btn-primary" href="accueil.php" role="button">Accueil</a>
                 <a class="btn btn-primary" href="gestion_compagnons.php" role="button">Gestion des compagnons</a>
-                <a class="btn btn-primary" href="liste_compagnons.php" role="button">Liste des compagnons</a>
                 <a class="btn btn-primary" href="administration.php" role="button">Administration</a>
             </p>
         </div>
@@ -138,7 +137,6 @@ if (isset($_POST['delRace'])){
                     <div class="col-md-3"><input class="w-100" type="text"name="addRace" value="<?php if (isset($_POST['addRace'])){echo $_POST['addRace'];} ?>"></div>
                     <div class="col-md-2"><label for="sub"><input type="submit" name="subRace" value="Enregistrer"></label></div>
                     <div class="col-md-3">Avec Majuscule sans point, merci</div>
-
                     <div class="col-md-12">
                         <?php if ($messageChampVideRace)  {
                             ?> <div class="alert alert-warning alert-dismissible" role="alert" id="hideDivChampAbsent">
@@ -175,7 +173,6 @@ if (isset($_POST['delRace'])){
                     <div class="col-md-3"><input class="w-100" type="text"name="addCouleur" value="<?php if (isset($_POST['addCouleur'])){echo $_POST['addCouleur'];} ?>"></div>
                     <div class="col-md-2"><label for="sub"><input type="submit" name="subCouleur" value="Enregistrer"></label></div>
                     <div class="col-md-3">Avec Majuscule sans point, merci</div>
-
                     <div class="col-md-12">
                         <?php if ($messageChampVidecouleur)  {
                             ?> <div class="alert alert-warning alert-dismissible" role="alert" id="hideDivChampAbsent">
@@ -207,7 +204,6 @@ if (isset($_POST['delRace'])){
                             <?php
                         }
                         ?>
-
                     </div>
                     <!--Couleur à ajouter via form "Administration"-->
                     <div class="col-md-4 " ><label>Etat de santé à ajouter</label></div>
@@ -263,7 +259,7 @@ if (isset($_POST['delRace'])){
                         <?php foreach ($race as $races): ?>
                             <td><?= $races['nomRace'] ?></td>
                             <form action="" method="POST">
-                                <td><input type="submit" class="btn btn-danger" name="delete" value="Supprimer"></td> </td>
+                                <td><input type="submit" class="btn btn-danger" name="delete" value="Supprimer"></td>
                                 <input type="hidden" class="btn btn-danger" name="delRace" value="<?php echo $races['idRace'] ?>">
                             </form>
                             </tr>

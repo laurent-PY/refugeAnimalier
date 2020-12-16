@@ -5,7 +5,7 @@
 function insert_pet_bdd()
 {
     $messagePetPresent = "";
-    $pdoStat = cnx_pdo_bdd()->prepare('SELECT * FROM chat WHERE nom = :nom AND b_recep = :b_recep AND sexe = :sexe AND poids_recep = :poids_recep AND vaccin = :vaccin AND steril = :steril AND puce_id = :puce_id AND d_in = :d_in AND d_out = :d_out AND taille = :taille AND idRace = :idRace AND idSante = :idSante ');
+    $pdoStat = cnx_pdo_bdd()->prepare('SELECT * FROM chat WHERE nom = :nom AND b_recep = :b_recep AND sexe = :sexe AND poids_recep = :poids_recep AND vaccin = :vaccin AND steril = :steril AND puce_id = :puce_id AND d_in = :d_in AND taille = :taille AND idRace = :idRace AND idSante = :idSante ');
     $pdoStat->bindValue(':nom', $_POST['nom'], PDO::PARAM_STR);
     $pdoStat->bindValue(':b_recep', $_POST['b_recep'], PDO::PARAM_STR);
     $pdoStat->bindValue(':sexe', $_POST['sexe'], PDO::PARAM_STR);
@@ -14,7 +14,6 @@ function insert_pet_bdd()
     $pdoStat->bindValue(':steril', $_POST['steril'], PDO::PARAM_STR);
     $pdoStat->bindValue(':puce_id', $_POST['puce_id'], PDO::PARAM_STR);
     $pdoStat->bindValue(':d_in', $_POST['d_in'], PDO::PARAM_STR);
-    $pdoStat->bindValue(':d_out', $_POST['d_out'], PDO::PARAM_STR);
     $pdoStat->bindValue(':taille', $_POST['taille'], PDO::PARAM_STR);
     $pdoStat->bindValue(':idRace', $_POST['idRace'], PDO::PARAM_STR);
     $pdoStat->bindValue(':idSante', $_POST['idSante'], PDO::PARAM_STR);
@@ -34,7 +33,7 @@ function insert_pet_bdd()
             $pdoStat->bindValue(':steril', $_POST['steril'], PDO::PARAM_STR);
             $pdoStat->bindValue(':puce_id', $_POST['puce_id'], PDO::PARAM_STR);
             $pdoStat->bindValue(':d_in', $_POST['d_in'], PDO::PARAM_STR);
-            $pdoStat->bindValue(':d_out', $_POST['d_out'], PDO::PARAM_STR);
+            $pdoStat->bindValue(':d_out', NULL, PDO::PARAM_STR);
             $pdoStat->bindValue(':taille', $_POST['taille'], PDO::PARAM_STR);
             $pdoStat->bindValue(':idRace', $_POST['idRace'], PDO::PARAM_STR);
             $pdoStat->bindValue(':idSante', $_POST['idSante'], PDO::PARAM_STR);
