@@ -36,15 +36,21 @@ if (isset($_POST['subUpdate'])){ // je test si mon formulaire à été initialis
         $messageChampVide = true; // si le bouton du formulaire a été cliké et qu'un champ défini lors du contrôle est vide je retourne true.
     }
 }
+if (isset($_POST['modifChat'])){
+    $modifChat = $_POST['modifChat'];
 
-$modifChat = $_POST['modifChat'];
-
+}
 $pdoBdd = cnx_pdo_bdd(); //initialisation de la variable de connexion $pdoBdd en utilisant la fonction introduite via "require 'conn_bdd.php';"
-$pdoStat = $pdoBdd->prepare("SELECT * FROM chat WHERE idChat = " .  $modifChat); //preparation de la requete stockée dans $pdoStat
+$pdoStat = $pdoBdd->prepare('SELECT * FROM chat WHERE idChat = ' .  $modifChat); //preparation de la requete stockée dans $pdoStat
 $pdoStat->execute(); //execution de la requete
-$resultChat = $pdoStat->fetchAll(); // stockage du resultat dans la variable $race
+$resultChat = $pdoStat->fetchAll(); // stockage du resultat dans la variable $resultChat
+
+
+
+
 
 foreach($resultChat as $value){
+    $idChat = $value['idChat'];
     $nom = $value['nom'];
     $b_recep = $value['b_recep'];
     $sexe = $value['sexe'];
@@ -195,7 +201,10 @@ foreach($resultChat as $value){
                     </div>
                     <div class="col-md-5">Son état de santé visuel lors de l'admission</div>
                     <div class="col-md-4"><label for="sub"><input type="submit" name="subUpdate" value="Modifier"></label></div>
-                    <?php//TODO Hidden idchat ?>
+                    <input type="hidden" name="modifChat" value="<?= $resultChat['idChat'];
+                    print_r($resultChat);
+                    ?>">
+
                     <div class="col-md-8">
                         <?php if ($messageAddSuccess) {
                             ?> <div class="alert alert-success alert-dismissible fade show" role="alert" id="hideDivAjoutOk">
@@ -204,7 +213,6 @@ foreach($resultChat as $value){
                                     <span aria-hidden="true">&times;</span>
                                 </button
                             </div>
-
                             <?php
                         }
                         ?>
@@ -234,6 +242,5 @@ foreach($resultChat as $value){
         </div>
     </div>
 </div>
-
 </body>
 </html

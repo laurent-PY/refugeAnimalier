@@ -11,7 +11,6 @@ if (isset($_POST['delChat'])){
 ?>
 <!doctype html>
 <html lang="fr">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
@@ -76,14 +75,13 @@ if (isset($_POST['delChat'])){
                             <td><?= $chats['taille'] ?></td>
                             <form action="modification_compagnons.php" method="POST">
                                 <td><input type="submit" class="btn btn-warning" name="modif" value="Modifier"></td>
-                                <input type="hidden" class="btn btn-danger" name="modifChat" value="<?php echo $chats['idChat'] ?>">
+                                <input type="hidden" name="modifChat" value="<?php echo $chats['idChat'] ?>">
                             </form>
 
                             <form action="" method="POST">
                                 <td><input type="submit" class="btn btn-danger" name="delete" value="Supprimer"></td>
-                                <input type="hidden" class="btn btn-danger" name="delChat" value="<?php echo $chats['idChat'] ?>">
+                                <input type="hidden" name="delChat" value="<?php echo $chats['idChat'] ?>">
                             </form>
-
                         </tr>
                     <?php endforeach ?>
                     </tbody>

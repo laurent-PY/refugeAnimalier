@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="982b3405-d80d-4e49-9d7c-7398c2eefe62" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/functions/req_up_pet.php" beforeDir="false" afterPath="$PROJECT_DIR$/functions/req_up_pet.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/liste_compagnons.php" beforeDir="false" afterPath="$PROJECT_DIR$/liste_compagnons.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modification_compagnons.php" beforeDir="false" afterPath="$PROJECT_DIR$/modification_compagnons.php" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="hiddenUrls">
+      <set>
+        <option value="https://github.com/laurent-PY/refugeAnimalier" />
+      </set>
+    </option>
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP" />
+  <component name="ProjectId" id="1kmhN3swfmltaZEs8MZiGD7bCU8" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="DatabaseDriversLRU" value="mariadb" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../test" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Laurent\Documents\_6Cours_PHP\PHP_Michael_B\phpFomCatBddSvg\functions" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Laurent\Documents\_6Cours_PHP\PHP_Michael_B\phpFomCatBddSvg" />
+      <recent name="C:\Users\Laurent\Documents\_6Cours_PHP\PHP_Michael_B\phpFomCatBddSvg\à_voir" />
+      <recent name="C:\Users\Laurent\Documents\_6Cours_PHP\PHP_Michael_B\phpFomCatBddSvg\test" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="982b3405-d80d-4e49-9d7c-7398c2eefe62" name="Default Changelist" comment="" />
+      <created>1606311630709</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1606311630709</updated>
+      <workItem from="1606311631748" duration="7782000" />
+      <workItem from="1606319933140" duration="12194000" />
+      <workItem from="1606336508824" duration="9000" />
+      <workItem from="1606336689407" duration="46257000" />
+      <workItem from="1606478772637" duration="228000" />
+      <workItem from="1607032629695" duration="1661000" />
+      <workItem from="1607066730393" duration="338000" />
+      <workItem from="1607215450280" duration="3318000" />
+      <workItem from="1607331801245" duration="45175000" />
+      <workItem from="1607529029294" duration="12661000" />
+      <workItem from="1607585869277" duration="616000" />
+      <workItem from="1607591140310" duration="1958000" />
+      <workItem from="1607613262835" duration="38060000" />
+      <workItem from="1607800093261" duration="10790000" />
+      <workItem from="1607931044735" duration="23021000" />
+      <workItem from="1608023431814" duration="37482000" />
+      <workItem from="1608104090948" duration="7299000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="667" y="168" key="#PHP" timestamp="1606311647967">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="667" y="168" key="#PHP/0.0.1920.1050@0.0.1920.1050" timestamp="1606311647967" />
+    <state x="552" y="183" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1607437597507">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="552" y="183" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1607437597507" />
+    <state x="690" y="272" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1606316867040">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="690" y="272" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1606316867040" />
+    <state x="1220" y="283" key="FileChooserDialogImpl" timestamp="1608046227803">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="1220" y="283" key="FileChooserDialogImpl/0.0.1920.1050@0.0.1920.1050" timestamp="1608046227803" />
+    <state width="1293" height="285" key="GridCell.Tab.0.bottom" timestamp="1606417137556">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1293" height="285" key="GridCell.Tab.0.bottom/0.0.1920.1050@0.0.1920.1050" timestamp="1606417137556" />
+    <state width="1293" height="285" key="GridCell.Tab.0.center" timestamp="1606417137556">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1293" height="285" key="GridCell.Tab.0.center/0.0.1920.1050@0.0.1920.1050" timestamp="1606417137556" />
+    <state width="1293" height="285" key="GridCell.Tab.0.left" timestamp="1606417137556">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1293" height="285" key="GridCell.Tab.0.left/0.0.1920.1050@0.0.1920.1050" timestamp="1606417137556" />
+    <state width="1293" height="285" key="GridCell.Tab.0.right" timestamp="1606417137556">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1293" height="285" key="GridCell.Tab.0.right/0.0.1920.1050@0.0.1920.1050" timestamp="1606417137556" />
+    <state x="667" y="248" key="NewPhpClassDialog" timestamp="1607962327893">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="667" y="248" key="NewPhpClassDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1607962327893" />
+    <state x="794" y="448" key="NewPhpFileDialog" timestamp="1608075349831">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="794" y="448" key="NewPhpFileDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1608075349831" />
+    <state x="461" y="170" key="SettingsEditor" timestamp="1608104572258">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="461" y="170" key="SettingsEditor/0.0.1920.1050@0.0.1920.1050" timestamp="1608104572258" />
+    <state x="803" y="297" key="refactoring.ChangeSignatureDialog" timestamp="1608048070064">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="803" y="297" key="refactoring.ChangeSignatureDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1608048070064" />
+    <state x="616" y="243" key="run.anything.popup" timestamp="1608106261009">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="616" y="243" key="run.anything.popup/0.0.1920.1050@0.0.1920.1050" timestamp="1608106261009" />
+    <state x="623" y="227" width="672" height="678" key="search.everywhere.popup" timestamp="1608104468448">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="623" y="227" width="672" height="678" key="search.everywhere.popup/0.0.1920.1050@0.0.1920.1050" timestamp="1608104468448" />
+  </component>
+</project>

@@ -21,7 +21,8 @@ function update_pet_bdd()
     if ($pdoStat->rowCount() ==  0) {
         try {
             $objetPdo = cnx_pdo_bdd(); // appel à la fonction de connexion à la base de données
-            $pdoStat = $objetPdo->prepare('Update chat SET nom = :nom, b_recep = :b_recep, sexe = :sexe, poids_recep = :poids_recep, vaccin = :vaccin, steril = :steril, puce_id = :puce_id, d_in = :d_in, d_out = :d_out, taille = :taille, idRace = :idRace, idSante = :idSante WHERE idChat = :idChat');
+            $pdoStat = $objetPdo->prepare("Update chat SET idChat = :idChat, nom = :nom, b_recep = :b_recep, sexe = :sexe, poids_recep = :poids_recep, vaccin = :vaccin, steril = :steril, puce_id = :puce_id, d_in = :d_in, d_out = :d_out, taille = :taille, idRace = :idRace, idSante = :idSante WHERE idChat = :idChat");
+            $pdoStat->bindValue(':idChat', $_POST['modifChat'], PDO::PARAM_STR);
             $pdoStat->bindValue(':nom', $_POST['nom'], PDO::PARAM_STR);
             $pdoStat->bindValue(':b_recep', $_POST['b_recep'], PDO::PARAM_STR);
             $pdoStat->bindValue(':sexe', $_POST['sexe'], PDO::PARAM_STR);
