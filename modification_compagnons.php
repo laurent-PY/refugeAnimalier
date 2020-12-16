@@ -3,7 +3,7 @@ include 'functions/cnx_bdd.php'; // permet d'acceder au script dans le dossier "
 include 'functions/req_sel_race_sante_color_chat.php';
 include 'functions/req_insert_pet_race_color.php';
 include 'functions/req_delete_pet_race_color_sante.php';
-include 'functions/req_update.php';
+include 'functions/req_up_pet.php';
 $messageAddSuccess = false; // j'initialise une variable a false pour la passer a true lors du traitement de la requête
 $messageChampVide = false;
 $messagePetPresent = "";
@@ -13,13 +13,13 @@ $pdoBdd = cnx_pdo_bdd(); // dans cette variable est stocké l'objet de connexion
 $chat = req_Sel_Chat(); //
 
 
-if (isset($_POST['subPet'])){ // je test si mon formulaire à été initialisé,
+if (isset($_POST['subUpdate'])){ // je test si mon formulaire à été initialisé,
 // si oui; j'effectue un contrôle sur certain champ, c'est à dire, ceux que je n'ai pas encapsulé dans un <select>
     if (!empty($_POST['nom']) && !empty($_POST['b_recep']) && !empty($_POST['poids_recep']) && !empty($_POST['d_in']) && !empty($_POST['d_out']) && !empty($_POST['taille'])) {
         try {
 
             $objetPdo = cnx_pdo_bdd(); // Connexion à la base en passant par le dossier functions
-            $messagePetPresent = insert_pet_bdd(); // ici je test si le compagnon que je suis en train d'ajouter et déjà présent dans la Bdd
+            $messagePetPresent = update_pet_bdd(); // ici je test si le compagnon que je suis en train d'ajouter et déjà présent dans la Bdd
             //pour éviter d'avoir les deux message d'information qui s'affichent en même temps je teste avec un if,
             if ($messagePetPresent != ""){ // si la variable de test $messagePetPresent à retourné un resultat non null
                 $messageAddSuccess = false; // je n'affiche pas le resultat
@@ -38,10 +38,26 @@ if (isset($_POST['subPet'])){ // je test si mon formulaire à été initialisé,
 }
 
 $modifChat = $_POST['modifChat'];
+
 $pdoBdd = cnx_pdo_bdd(); //initialisation de la variable de connexion $pdoBdd en utilisant la fonction introduite via "require 'conn_bdd.php';"
 $pdoStat = $pdoBdd->prepare("SELECT * FROM chat WHERE idChat = " .  $modifChat); //preparation de la requete stockée dans $pdoStat
 $pdoStat->execute(); //execution de la requete
 $resultChat = $pdoStat->fetchAll(); // stockage du resultat dans la variable $race
+
+foreach($resultChat as $value){
+    $nom = $value['nom'];
+    $b_recep = $value['b_recep'];
+    $sexe = $value['sexe'];
+    $poids_recep = $value['poids_recep'];
+    $vaccin = $value['vaccin'];
+    $steril = $value['steril'];
+    $puce_id = $value['puce_id'];
+    $d_in = $value['d_in'];
+    $d_out = $value['d_out'];
+    $taille = $value['taille'];
+    $idRace = $value['idRace'];
+    $idSante = $value['idSante'];
+}
 
 
 ?>
@@ -58,6 +74,7 @@ $resultChat = $pdoStat->fetchAll(); // stockage du resultat dans la variable $ra
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 </head>
+
 <body class="bckgrnd">
 <div class="container mrgTpMenu">
     <div class="row">
@@ -84,16 +101,16 @@ $resultChat = $pdoStat->fetchAll(); // stockage du resultat dans la variable $ra
             <form action="#" method="post"> <!--début du formulaire qui a pour action un # qui sous-entend que je cible cette page pour le traitement-->
                 <div class="row"> <!--toujours la classe row pour emtamer un partitionement des col dans le formulaire-->
                     <div class="col-md-4" ><label>Nom du compagon : </label></div>
-                    <div class="col-md-3"><input class="w-100" type="text"name="nom" value="<?php $resultChat['nom']  ?>"></div> <!--lorsque le form est soumis je garde son contenu en passant par un isset-->
+                    <div class="col-md-3"><input class="w-100" type="text"name="nom" value="<?= $nom ?>"></div> <!--lorsque le form est soumis je garde son contenu en passant par un isset-->
                     <div class="col-md-5">Nom du compagnon</div>
                     <div class="col-md-4"><label for="age_reception">L'age lors de la réception : </label></div>
-                    <div class="col-md-3"><input type="text" class="w-100" name="b_recep" value="<?php if (isset($_POST['b_recep'])){echo $_POST['b_recep'];} ?>"></div>
+                    <div class="col-md-3"><input type="text" class="w-100" name="b_recep" value="<?= $b_recep ?>"></div>
                     <div class="col-md-5">Age estimé lors de l'entrée au refuge(arrondir à l'année)</div>
                     <div class="col-md-4"><label for="sexe">Le genre du compagnon : </label></div>
                     <div class="col-md-3">
                         <div class="input-group mb-3">
                             <div class="input-group-prepend">
-                                <select class="custom-select" name="sexe" value="<?php if (isset($_POST['sexe'])){echo $_POST['sexe'];} ?>">
+                                <select class="custom-select" name="sexe" value="<?= $sexe ?> ">
                                     <option value="femelle">Femelle</option>
                                     <option value="male">Male</option>
                                 </select>
@@ -102,13 +119,13 @@ $resultChat = $pdoStat->fetchAll(); // stockage du resultat dans la variable $ra
                     </div>
                     <div class="col-md-5">Mâle ou femmelle</div>
                     <div class="col-md-4"><label for="poids_recep">Le poids lors de la reception : </label></div>
-                    <div class="col-md-3"><input type="text" class="w-100" name="poids_recep" value="<?php if (isset($_POST['poids_recep'])){echo $_POST['poids_recep'];} ?>"></div>
+                    <div class="col-md-3"><input type="text" class="w-100" name="poids_recep" value="<?= $poids_recep ?>"></div>
                     <div class="col-md-5">Précisez en kilogrammes</div>
                     <div class="col-md-4"><label for="vaccin">Vaccin à jour : </label></div>
                     <div class="col-md-3">
                         <div class="input-group mb-3">
                             <div class="input-group-prepend">
-                                <select class="custom-select" name="vaccin" value="<?php if (isset($_POST['vaccin'])){echo $_POST['vaccin'];} ?>">
+                                <select class="custom-select" name="vaccin" value="<?= $vaccin ?>">
                                     <option value= 0 >Non</option>
                                     <option value= 1 >Oui</option>
                                 </select>
@@ -120,7 +137,7 @@ $resultChat = $pdoStat->fetchAll(); // stockage du resultat dans la variable $ra
                     <div class="col-md-3">
                         <div class="input-group mb-3">
                             <div class="input-group-prepend">
-                                <select class="custom-select" name="steril" value="<?php if (isset($_POST['steril'])){echo $_POST['steril'];} ?>">
+                                <select class="custom-select" name="steril" value="<?= $steril ?>">
                                     <option value= 0 >Non</option>
                                     <option value= 1 >Oui</option>
                                 </select>
@@ -132,7 +149,7 @@ $resultChat = $pdoStat->fetchAll(); // stockage du resultat dans la variable $ra
                     <div class="col-md-3">
                         <div class="input-group mb-3">
                             <div class="input-group-prepend">
-                                <select class="custom-select" name="puce_id" value="<?php if (isset($_POST['pude_id'])){echo $_POST['puce_id'];} ?>">
+                                <select class="custom-select" name="puce_id" value="<?= $puce_id ?>">
                                     <option value= 0 >Non</option>
                                     <option value= 1 >Oui</option>
                                 </select>
@@ -141,19 +158,19 @@ $resultChat = $pdoStat->fetchAll(); // stockage du resultat dans la variable $ra
                     </div>
                     <div class="col-md-5">Posséde une puce d'identification</div>
                     <div class="col-md-4"><label for="d_in">Date d'entrée au refuge : </label></div>
-                    <div class="col-md-3"><input type="date"name="d_in" value="<?php if (isset($_POST['d_in'])){echo $_POST['d_in'];} ?>"></div>
+                    <div class="col-md-3"><input type="date"name="d_in" value="<?= $d_in ?>"></div>
                     <div class="col-md-5">Date d'admission au refuge</div>
                     <div class="col-md-4"><label for="d_out">Date de sortie du refuge : </label></div>
-                    <div class="col-md-3"><input type="date"name="d_out" value="<?php if (isset($_POST['d_out'])){echo $_POST['d_out'];} ?>"></div>
+                    <div class="col-md-3"><input type="date"name="d_out" value="<?= $d_out ?>"></div>
                     <div class="col-md-5">Date de sortie du refuge</div>
                     <div class="col-md-4"><label for="taille">Taille du compagnon : </label></div>
-                    <div class="col-md-3"><input type="text" class="w-100" name="taille" value="<?php if (isset($_POST['taille'])){echo $_POST['taille'];} ?>"></div>
+                    <div class="col-md-3"><input type="text" class="w-100" name="taille" value="<?= $taille ?>"></div>
                     <div class="col-md-5">La taille d'un compagnon se mesure au garot</div>
                     <div class="col-md-4"><label for="idRace">Identificateur de race : </label></div>
                     <div class="col-md-3">
                         <div class="input-group mb-3">
                             <div class="input-group-prepend">
-                                <select class="custom-select" name="idRace" value="<?php if (isset($_POST['idRace'])){echo $_POST['idRace'];}  ?>">
+                                <select class="custom-select" name="idRace" value="<?= $idRace ?>"">
                                     <?php foreach($race as $races){ ?>
                                         <option value="<?= $races['idRace']; ?>"><?= $races['nomRace']; ?></option>
                                     <?php } ?>
@@ -168,7 +185,7 @@ $resultChat = $pdoStat->fetchAll(); // stockage du resultat dans la variable $ra
                     <div class="col-md-3">
                         <div class="input-group mb-3">
                             <div class="input-group-prepend">
-                                <select class="custom-select" name="idSante" value="<?php if (isset($_POST['etatSante'])){echo $_POST['etatSante'];} ?>">
+                                <select class="custom-select" name="idSante" value="<?= $idSante ?>">
                                     <?php foreach($sante as $santes){ ?>
                                         <option value="<?= $santes['idSante']; ?>"><?= $santes['etatSante']; ?></option>  <!--dans le value de l'option je remplace le contenu en dur par les éléments de la base-->
                                     <?php } ?>                                                                             <!--la première balise php contient l'id de santé, c'est celui là que je passe en requete-->
@@ -177,7 +194,8 @@ $resultChat = $pdoStat->fetchAll(); // stockage du resultat dans la variable $ra
                         </div>
                     </div>
                     <div class="col-md-5">Son état de santé visuel lors de l'admission</div>
-                    <div class="col-md-4"><label for="sub"><input type="submit" name="subPet" value="Enregistrer"></label></div>
+                    <div class="col-md-4"><label for="sub"><input type="submit" name="subUpdate" value="Modifier"></label></div>
+                    <?php//TODO Hidden idchat ?>
                     <div class="col-md-8">
                         <?php if ($messageAddSuccess) {
                             ?> <div class="alert alert-success alert-dismissible fade show" role="alert" id="hideDivAjoutOk">

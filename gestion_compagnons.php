@@ -3,7 +3,6 @@ include 'functions/cnx_bdd.php'; // permet d'acceder au script dans le dossier "
 include 'functions/req_sel_race_sante_color_chat.php';
 include 'functions/req_insert_pet_race_color.php';
 include 'functions/req_delete_pet_race_color_sante.php';
-include 'functions/req_update.php';
 $messageAddSuccess = false; // j'initialise une variable a false pour la passer a true lors du traitement de la requête
 $messageChampVide = false;
 $messagePetPresent = "";

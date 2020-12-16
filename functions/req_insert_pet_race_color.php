@@ -52,6 +52,7 @@ function insert_pet_bdd()
 }
 
 
+
 function addRace(){
 
     $messageRacePresent = "";

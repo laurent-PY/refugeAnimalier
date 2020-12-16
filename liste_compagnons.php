@@ -2,22 +2,12 @@
 include 'functions/cnx_bdd.php';
 include 'functions/req_sel_race_sante_color_chat.php';
 include 'functions/req_delete_pet_race_color_sante.php';
-include 'functions/req_update.php';
+include 'functions/req_up_pet.php';
 $chat = req_Sel_Chat(); // dans cette variable est stocké le resultat du SElect qui me permet d'afficher un tableau et de faire une liste des compagnons
 if (isset($_POST['delChat'])){
     $delChat = $_POST['delChat'];
     delete_pet($delChat);
 }
-
-/*if (isset($_GET['modifChat'])) {
-    $modifChat = $_GET["modifChat"];
-    recupIdchat($modifChat);
-}*/
-
-
-
-
-
 ?>
 <!doctype html>
 <html lang="fr">
@@ -84,22 +74,22 @@ if (isset($_POST['delChat'])){
                             <td><?= $chats['d_in'] ?></td>
                             <td><?= $chats['d_out'] ?></td>
                             <td><?= $chats['taille'] ?></td>
+                            <form action="modification_compagnons.php" method="POST">
+                                <td><input type="submit" class="btn btn-warning" name="modif" value="Modifier"></td>
+                                <input type="hidden" class="btn btn-danger" name="modifChat" value="<?php echo $chats['idChat'] ?>">
+                            </form>
 
                             <form action="" method="POST">
                                 <td><input type="submit" class="btn btn-danger" name="delete" value="Supprimer"></td>
                                 <input type="hidden" class="btn btn-danger" name="delChat" value="<?php echo $chats['idChat'] ?>">
                             </form>
-                            <form action="modification_compagnons.php" method="POST">
-                                <td><input type="submit" class="btn btn-warning" name="modif" value="Modifier"></td>
-                                <input type="hidden" class="btn btn-danger" name="modifChat" value="<?php echo $chats['idChat'] ?>">
-                            </form>
+
                         </tr>
                     <?php endforeach ?>
                     </tbody>
                 </table>
             </div>
         </div>
-
 </div>
 </body>
 </html>
