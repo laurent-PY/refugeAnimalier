@@ -31,9 +31,6 @@ if (isset($_POST['delChat'])){
                 <a class="btn btn-primary" href="gestion_compagnons.php" role="button">Gestion des compagnons</a>
                 <a class="btn btn-primary" href="liste_compagnons.php" role="button">Liste des compagnons</a>
                 <a class="btn btn-primary" href="administration.php" role="button">Administration</a>
-                <a class="btn btn-primary" href="liste_races.php" role="button">liste des races</a>
-                <a class="btn btn-primary" href="liste_couleurs.php" role="button">liste des couleurs</a>
-                <a class="btn btn-primary" href="liste_etatSante.php" role="button">liste des état de santé</a>
             </p>
         </div>
     </div>

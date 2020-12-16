@@ -80,7 +80,23 @@ if (isset($_POST['subSante'])){
         $messageChampVideEtatSante = true;
     }
 }
+$couleur = req_Sel_Couleur(); // dans cette variable est stocké le resultat du SELECT qui me permet d'afficher un tableau et de faire une liste des compagnons
+if (isset($_POST['delCouleur'])){
+    $delCouleur = $_POST['delCouleur'];
+    delete_couleur($delCouleur);
+}
 
+$sante = req_Sel_Sante(); // dans cette variable est stocké le resultat du SElect qui me permet d'afficher un tableau et de faire une liste des compagnons
+if (isset($_POST['delSante'])){
+    $delSante = $_POST['delSante'];
+    delete_sante($delSante);
+}
+
+$race = req_Sel_Race(); // dans cette variable est stocké le resultat du SElect qui me permet d'afficher un tableau et de faire une liste des compagnons
+if (isset($_POST['delRace'])){
+    $delRace = $_POST['delRace'];
+    delete_race($delRace);
+}
 ?>
 
 <!doctype html>
@@ -105,9 +121,6 @@ if (isset($_POST['subSante'])){
                 <a class="btn btn-primary" href="gestion_compagnons.php" role="button">Gestion des compagnons</a>
                 <a class="btn btn-primary" href="liste_compagnons.php" role="button">Liste des compagnons</a>
                 <a class="btn btn-primary" href="administration.php" role="button">Administration</a>
-                <a class="btn btn-primary" href="liste_races.php" role="button">liste des races</a>
-                <a class="btn btn-primary" href="liste_couleurs.php" role="button">liste des couleurs</a>
-                <a class="btn btn-primary" href="liste_etatSante.php" role="button">liste des état de santé</a>
             </p>
         </div>
     </div>
@@ -235,6 +248,73 @@ if (isset($_POST['subSante'])){
                     </div>
                 </div>
             </form>
+        </div>
+        <div class="col-md-12 row divMenuAdmin">
+            <div class="col-md-4">
+                <div class="card shadow bg-white rounded">
+                    <table class="table table-striped">
+                        <thead>
+                        <tr>
+                            <th scope="col">Race</th>
+                            <th scope="col"></th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <?php foreach ($race as $races): ?>
+                            <td><?= $races['nomRace'] ?></td>
+                            <form action="" method="POST">
+                                <td><input type="submit" class="btn btn-danger" name="delete" value="Supprimer"></td> </td>
+                                <input type="hidden" class="btn btn-danger" name="delRace" value="<?php echo $races['idRace'] ?>">
+                            </form>
+                            </tr>
+                        <?php endforeach ?>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card shadow bg-white rounded">
+                    <table class="table table-striped">
+                        <thead>
+                        <tr>
+                            <th scope="col">Couleurs :</th>
+                            <th scope="col"></th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <?php foreach ($couleur as $couleurs): ?>
+                            <td><?= $couleurs['couleur'] ?></td>
+                            <form action="" method="POST">
+                                <td><input type="submit" class="btn btn-danger" name="delete" value="Supprimer"></td>
+                                <input type="hidden" class="btn btn-danger" name="delCouleur" value="<?php echo $couleurs['idCouleur'] ?>">
+                            </form>
+                            </tr>
+                        <?php endforeach ?>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card shadow bg-white rounded">
+                    <table class="table table-striped">
+                        <thead>
+                        <tr>
+                            <th scope="col">Etat de Santé</th>
+                            <th scope="col"></th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <?php foreach ($sante as $santes): ?>
+                            <td><?= $santes['etatSante'] ?></td>
+                            <form action="" method="POST">
+                                <td><input type="submit" class="btn btn-danger" name="delete" value="Supprimer"></td> </td>
+                                <input type="hidden" class="btn btn-danger" name="delSante" value="<?php echo $santes['idSante'] ?>"></form>
+                            </tr>
+                        <?php endforeach ?>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
         </div>
     </div>
 </body>
