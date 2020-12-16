@@ -65,8 +65,7 @@ if (isset($_POST['listPet'])){
         </div>
     </div>
 </div>
-
-<div class="container mrgTp">
+<div class="container mrgTp opacity">
     <div class="card shadow bg-white rounded">
         <div class="card-header">
             <h3 class="ajtcompagnon">Gestion des compagnons</h3>
@@ -208,6 +207,5 @@ if (isset($_POST['listPet'])){
         </div>
     </div>
 </div>
-
 </body>
 </html>

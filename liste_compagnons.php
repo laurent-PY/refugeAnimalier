@@ -34,7 +34,7 @@ if (isset($_POST['delChat'])){
         </div>
     </div>
 </div>
-<div class="bodyMAxMain mrgTp">
+<div class="bodyMAxMain mrgTp opacity">
         <div class="card shadow bg-white rounded">
             <div class="card-header">
                 <h3 class="ajtcompagnon">Compagnons au refuge :</h3>
@@ -75,7 +75,7 @@ if (isset($_POST['delChat'])){
                             </form>
 
                             <form action="" method="POST">
-                                <td><input type="submit" class="btn btn-danger" name="delete" value="Supprimer"></td>
+                                <td><input type="submit" class="btn btn-danger" name="delete" value="Supprimer" onclick="return confirm('<?= "Voulez-vous supprimer :  " . $chats['nom'] . " ?" ?>');"></td>
                                 <input type="hidden" name="delChat" value="<?php echo $chats['idChat'] ?>">
                             </form>
                         </tr>

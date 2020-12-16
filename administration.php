@@ -38,8 +38,6 @@ if (isset($_POST['subRace'])){ // me permet d'ajouter une race, j'utilise ce for
     }
 }
 
-
-
 if (isset($_POST['subCouleur'])){
     if (!empty($_POST['addCouleur'])) {
         try {
@@ -85,18 +83,22 @@ if (isset($_POST['delCouleur'])){
     $delCouleur = $_POST['delCouleur'];
     delete_couleur($delCouleur);
 }
-
-$sante = req_Sel_Sante(); // dans cette variable est stocké le resultat du SElect qui me permet d'afficher un tableau et de faire une liste des compagnons
-if (isset($_POST['delSante'])){
-    $delSante = $_POST['delSante'];
-    delete_sante($delSante);
-}
-
 $race = req_Sel_Race(); // dans cette variable est stocké le resultat du SElect qui me permet d'afficher un tableau et de faire une liste des compagnons
 if (isset($_POST['delRace'])){
     $delRace = $_POST['delRace'];
     delete_race($delRace);
 }
+
+
+$sante = req_Sel_Sante(); // dans cette variable est stocké le resultat du SElect qui me permet d'afficher un tableau et de faire une liste des compagnons
+if (isset($_POST['delSante'])){
+
+    $delSante = $_POST['delSante'];
+    delete_sante($delSante);
+}
+
+
+
 ?>
 
 <!doctype html>
@@ -107,6 +109,7 @@ if (isset($_POST['delRace'])){
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
     <link rel="stylesheet" href="styles.css">
     <script type="text/javascript" src="scripts.js"></script>
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -124,7 +127,7 @@ if (isset($_POST['delRace'])){
         </div>
     </div>
 </div>
-<div class="container mrgTp">
+<div class="container mrgTp opacity">
     <div class="card shadow bg-white rounded">
         <div class="card-header">
             <h3 class="ajtcompagnon">Administration ...</h3>
@@ -259,7 +262,7 @@ if (isset($_POST['delRace'])){
                         <?php foreach ($race as $races): ?>
                             <td><?= $races['nomRace'] ?></td>
                             <form action="" method="POST">
-                                <td><input type="submit" class="btn btn-danger" name="delete" value="Supprimer"></td>
+                                <td><input type="submit"  class="btn btn-danger" name="delete" value="Supprimer" onclick="return confirm('<?= "Voulez-vous supprimer :  " . $races['nomRace'] . " ?" ?>');"></td>
                                 <input type="hidden" class="btn btn-danger" name="delRace" value="<?php echo $races['idRace'] ?>">
                             </form>
                             </tr>
@@ -281,7 +284,7 @@ if (isset($_POST['delRace'])){
                         <?php foreach ($couleur as $couleurs): ?>
                             <td><?= $couleurs['couleur'] ?></td>
                             <form action="" method="POST">
-                                <td><input type="submit" class="btn btn-danger" name="delete" value="Supprimer"></td>
+                                <td><input type="submit" class="btn btn-danger" name="delete" value="Supprimer" onclick="return confirm('<?= "Voulez-vous supprimer :  " . $couleurs['couleur'] . " ?" ?>');"></td>
                                 <input type="hidden" class="btn btn-danger" name="delCouleur" value="<?php echo $couleurs['idCouleur'] ?>">
                             </form>
                             </tr>
@@ -303,7 +306,7 @@ if (isset($_POST['delRace'])){
                         <?php foreach ($sante as $santes): ?>
                             <td><?= $santes['etatSante'] ?></td>
                             <form action="" method="POST">
-                                <td><input type="submit" class="btn btn-danger" name="delete" value="Supprimer"></td> </td>
+                                <td><input type="submit" class="btn btn-danger" name="delete" value="Supprimer" onclick="return confirm('<?= "Voulez-vous supprimer :  " . $santes['etatSante'] . " ?" ?>');"></td> </td>
                                 <input type="hidden" class="btn btn-danger" name="delSante" value="<?php echo $santes['idSante'] ?>"></form>
                             </tr>
                         <?php endforeach ?>

@@ -36,7 +36,7 @@ if (isset($_POST['subUpdate'])){ // je test si mon formulaire à été initialis
         $messageChampVide = true; // si le bouton du formulaire a été cliké et qu'un champ défini lors du contrôle est vide je retourne true.
     }
 }
-$variableProvenantDeListeCompagnons = $_POST['modifChat'];
+$modifChat = $_POST['modifChat'];
 
 
 if (!isset($_POST['modifChat'])){
@@ -44,13 +44,9 @@ if (!isset($_POST['modifChat'])){
 }
 
 $pdoBdd = cnx_pdo_bdd(); //initialisation de la variable de connexion $pdoBdd en utilisant la fonction introduite via "require 'conn_bdd.php';"
-$pdoStat = $pdoBdd->prepare('SELECT * FROM chat WHERE idChat = ' .  $variableProvenantDeListeCompagnons); //preparation de la requete stockée dans $pdoStat
+$pdoStat = $pdoBdd->prepare('SELECT * FROM chat WHERE idChat = ' .  $modifChat); //preparation de la requete stockée dans $pdoStat
 $pdoStat->execute(); //execution de la requete
 $resultChat = $pdoStat->fetchAll(); // stockage du resultat dans la variable $resultChat
-
-
-
-
 
 foreach($resultChat as $value){
     $idChat = $value['idChat'];
@@ -67,8 +63,9 @@ foreach($resultChat as $value){
     $idRace = $value['idRace'];
     $idSante = $value['idSante'];
 }
-
-
+if (isset($_POST['listPet'])){
+    header('location: liste_compagnons.php');
+}
 ?>
 <!doctype html>
 <html lang="fr">
@@ -83,7 +80,6 @@ foreach($resultChat as $value){
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 </head>
-
 <body class="bckgrnd">
 <div class="bodyMAxMain mrgTpMenu">
     <div class="row">
@@ -96,8 +92,7 @@ foreach($resultChat as $value){
         </div>
     </div>
 </div>
-
-<div class="container mrgTp">
+<div class="container mrgTp opacity">
     <div class="card shadow bg-white rounded">
         <div class="card-header">
             <h3 class="ajtcompagnon">Modification de compagnon</h3>
@@ -199,10 +194,14 @@ foreach($resultChat as $value){
                         </div>
                     </div>
                     <div class="col-md-5">Son état de santé visuel lors de l'admission</div>
-                    <div class="col-md-4"><label for="sub"><input type="submit" name="subUpdate" value="Modifier"></label></div>
+                    <div class="col-md-1"><label for="sub"><input type="submit"class="btn btn-warning" name="subUpdate" value="Modifier"></label></div>
                     <input type="hidden" name="modifChat" value="<?= $value['idChat'];
                     ?>">
-
+                    <form action="" method="POST">
+                        <div class="col-md-2"><label for="sub"><input type="submit" class="btn btn-success" name="listPet" value="Liste des compagnons"></label>
+                        </div>
+                        <div class="col-md-1"></div>
+                    </form>
                     <div class="col-md-8">
                         <?php if ($messageAddSuccess) {
                             ?> <div class="alert alert-success alert-dismissible fade show" role="alert" id="hideDivAjoutOk">
