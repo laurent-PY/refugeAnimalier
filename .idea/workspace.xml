@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="982b3405-d80d-4e49-9d7c-7398c2eefe62" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/administration.php" beforeDir="false" afterPath="$PROJECT_DIR$/administration.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/functions/req_delete_pet_race_color_sante.php" beforeDir="false" afterPath="$PROJECT_DIR$/functions/req_delete_pet_race_color_sante.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/liste_compagnons.php" beforeDir="false" afterPath="$PROJECT_DIR$/liste_compagnons.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -43,7 +43,7 @@
     <property name="DatabaseDriversLRU" value="mariadb" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../phpFomCatBddSvg - Copie" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
     <property name="vue.rearranger.settings.migration" value="true" />
@@ -82,7 +82,9 @@
       <workItem from="1607800093261" duration="10790000" />
       <workItem from="1607931044735" duration="23021000" />
       <workItem from="1608023431814" duration="37482000" />
-      <workItem from="1608104090948" duration="38723000" />
+      <workItem from="1608104090948" duration="42029000" />
+      <workItem from="1608159727107" duration="2918000" />
+      <workItem from="1608165935789" duration="3678000" />
     </task>
     <servers />
   </component>
@@ -94,18 +96,18 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="667" y="168" key="#PHP/0.0.1920.1050@0.0.1920.1050" timestamp="1606311647967" />
-    <state x="552" y="183" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1607437597507">
+    <state x="552" y="183" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1608169702089">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="552" y="183" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1607437597507" />
+    <state x="552" y="183" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1608169702089" />
     <state x="690" y="272" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1606316867040">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="690" y="272" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1606316867040" />
-    <state x="1220" y="283" key="FileChooserDialogImpl" timestamp="1608123434877">
+    <state x="1220" y="283" key="FileChooserDialogImpl" timestamp="1608162947104">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="1220" y="283" key="FileChooserDialogImpl/0.0.1920.1050@0.0.1920.1050" timestamp="1608123434877" />
+    <state x="1220" y="283" key="FileChooserDialogImpl/0.0.1920.1050@0.0.1920.1050" timestamp="1608162947104" />
     <state width="1293" height="285" key="GridCell.Tab.0.bottom" timestamp="1606417137556">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>

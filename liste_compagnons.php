@@ -59,8 +59,7 @@ if (isset($_POST['delChat'])){
                     </thead>
                     <tbody>
                     <?php foreach ($chat as $chats): ?>
-                    <?php  foreach ($race as $races)?>
-                        <tr>
+                          <tr>
                             <td><?= $chats['nom']?></td>
                             <td><?= $chats['b_recep'] ?></td>
                             <td><?= $chats['sexe'] ?></td>
